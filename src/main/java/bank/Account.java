@@ -11,6 +11,14 @@ public class Account {
     setBalance(balance);
   }
 
+  public void deposit(double amount){
+
+  }
+  
+  public void withdraw(double amount) {
+
+  }
+
   public int getId() {
     return this.id;
   }
