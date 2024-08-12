@@ -22,7 +22,18 @@ public class Account {
     DataSource.updateAccountBalance(id, balance);
   }
   
-  public void withdraw(double amount) {
+  public void withdraw(double amount) throws AmountException {
+
+    //Exception if amount negative...
+    if(amount < 0)
+      throw new AmountException("The withdrawal amount must be greater than 0.");
+    //Exception if insufficient funds...
+    if (amount > balance)
+        throw new AmountException("Insufficient funds!!!");
+        
+    balance -= amount;
+
+    DataSource.updateAccountBalance(id, balance);
 
   }
 
