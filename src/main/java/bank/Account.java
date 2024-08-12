@@ -18,6 +18,8 @@ public class Account {
        throw new AmountException("The minimum deposit is 1.00 US$.");
 
     balance += amount;
+
+    DataSource.updateAccountBalance(id, balance);
   }
   
   public void withdraw(double amount) {
